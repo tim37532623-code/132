@@ -1,0 +1,22 @@
+# Baseline: reproduce thesis Figs. 6-1..6-3 / Table 6-1 with the original parameters
+# (the reference point for S1-S9; same settings as the original script's full mode).
+name: original
+review_item: "Baseline reproduction of the original Figs. (G, p_v, E[W] vs lambda); reference for S1-S9"
+
+processing:
+  det: {type: deterministic, value: 1.0}
+  exp: {type: exponential, mean: 1.0}
+restart:
+  exp: {type: exponential, mean: 1.0}
+
+alphas: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.99, 1.0]
+fig_alphas: [0.2, 0.5, 0.8, 1.0]
+lambda_grid: {logspace: [-1, 1, 20]}
+
+t_end: 100000
+burn_in: 10000
+max_events: 1.0e9
+seeds: {start: 11, count: 10}
+
+min_ok_fraction: 0.8
+comparable_lambda_range: [0.1, 10.0]

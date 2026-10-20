@@ -1,0 +1,21 @@
+# Same as original.yaml but with the original script's --quick settings (fast preview / regression check).
+name: original_quick
+review_item: "Quick-mode baseline (original --quick settings); regression check for the refactor"
+
+processing:
+  det: {type: deterministic, value: 1.0}
+  exp: {type: exponential, mean: 1.0}
+restart:
+  exp: {type: exponential, mean: 1.0}
+
+alphas: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.99, 1.0]
+fig_alphas: [0.2, 0.5, 0.8, 1.0]
+lambda_grid: {logspace: [-1, 1, 10]}
+
+t_end: 30000
+burn_in: 3000
+max_events: 5.0e7
+seeds: {start: 11, count: 10}
+
+min_ok_fraction: 0.8
+comparable_lambda_range: [0.1, 10.0]
